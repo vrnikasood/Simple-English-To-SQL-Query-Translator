@@ -30,9 +30,12 @@ class Translator:
             )
             return response.choices[0].message.content
         except Exception as e:
-            print("OpenAI Exception:", e)
+            error_message = str(e)
+            print("OpenAI Exception:", error_message)
             traceback.print_exc()
-            return f"Error: {str(e)}"
+            if "exceeded your current quota" in error_message:
+                return "Error: The translation service is temporarily unavailable because the API quota has been exhausted. Please try again later or contact the site owner."
+            return f"Error: {error_message}"
     
     def translate_sql_to_nl(self, sql_query):
         """Translate SQL query to natural language"""
