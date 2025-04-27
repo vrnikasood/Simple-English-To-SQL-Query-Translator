@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, render_template
 import os
 import json
 from flask_cors import CORS
-from translator import Translator
+from backend.translator import Translator
 from database import Database
 from config import Config
 
