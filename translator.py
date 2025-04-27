@@ -30,7 +30,7 @@ class Translator:
             )
             return response.choices[0].message.content
         except Exception as e:
-            print("Exception occurred:", e)
+            print("OpenAI Exception:", e)
             traceback.print_exc()
             return f"Error: {str(e)}"
     
@@ -50,6 +50,6 @@ class Translator:
             )
             return response.choices[0].message.content
         except Exception as e:
-            print("Exception occurred:", e)
+            print("OpenAI Exception:", e)
             traceback.print_exc()
             return f"Error: {str(e)}"
