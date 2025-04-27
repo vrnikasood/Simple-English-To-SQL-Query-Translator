@@ -1,3 +1,5 @@
+import sys
+   print("PYTHONPATH:", sys.path)
 from flask import Flask, request, jsonify, render_template
 import os
 import json
