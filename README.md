@@ -37,25 +37,7 @@ A modern, responsive web application that translates between SQL queries and Nat
 4. Run the Flask server: `python backend/app.py`
 5. Open `frontend/index.html` in your browser
 
-## Project Structure
 
-```
-sql-nl-translator/
-├── backend/
-│   ├── app.py
-│   ├── translator.py
-│   ├── database.py
-│   └── config.py
-├── frontend/
-│   ├── index.html
-│   ├── translator.html
-│   ├── about.html
-│   ├── assets/
-│   │   ├── styles.css
-│   │   └── script.js
-├── .env
-├── README.md
-├── requirements.txt
 ```
 
 ## License
