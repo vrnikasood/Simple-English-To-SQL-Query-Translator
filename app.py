@@ -1,5 +1,3 @@
-import sys
-print("PYTHONPATH:", sys.path)
 from flask import Flask, request, jsonify, render_template
 import os
 import json
@@ -8,7 +6,7 @@ from translator import Translator
 from database import Database
 from config import Config
 
-app = Flask(__name__, static_folder='../frontend/assets', template_folder='../frontend')
+app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
 # Load configuration
