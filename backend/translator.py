@@ -1,10 +1,10 @@
 import os
-from openai import OpenAI
+import openai
 from config import OPENAI_API_KEY
 import traceback
 
-# Initialize OpenAI client
-client = OpenAI(api_key=OPENAI_API_KEY)
+# Set OpenAI API key
+openai.api_key = OPENAI_API_KEY
 
 class Translator:
     def __init__(self):
@@ -22,13 +22,12 @@ class Translator:
         messages.append({"role": "user", "content": text})
         
         try:
-            response = client.chat.completions.create(
+            response = openai.ChatCompletion.create(
                 model=self.model,
                 messages=messages,
                 temperature=0.1,  # Lower temperature for more deterministic outputs
                 max_tokens=500
             )
-            # Access message content with the newer API structure
             return response.choices[0].message.content
         except Exception as e:
             print("Exception occurred:", e)
@@ -43,13 +42,12 @@ class Translator:
         ]
         
         try:
-            response = client.chat.completions.create(
+            response = openai.ChatCompletion.create(
                 model=self.model,
                 messages=messages,
                 temperature=0.5,
                 max_tokens=500
             )
-            # Access message content with the newer API structure
             return response.choices[0].message.content
         except Exception as e:
             print("Exception occurred:", e)
