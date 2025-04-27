@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const mode = translationMode.value;
             const schema = mode === 'nl_to_sql' && schemaText ? schemaText.value.trim() : null;
             
-            const response = await fetch('http://192.168.1.2:5000/translate', {
+            const response = await fetch('/translate', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -288,7 +288,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Also save to server if API is available
         try {
-            fetch('http://localhost:5000/api/history', {
+            fetch('/api/history', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -304,7 +304,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!historyList) return;
         
         try {
-            const response = await fetch('http://localhost:5000/api/history', {
+            const response = await fetch('/api/history', {
                 method: 'GET'
             });
             const history = JSON.parse(localStorage.getItem('queryHistory') || '[]');
@@ -386,7 +386,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     async function clearHistory() {
         try {
-            const response = await fetch('http://localhost:5000/api/history/clear', {
+            const response = await fetch('/api/history/clear', {
                 method: 'POST'
             });
             localStorage.removeItem('queryHistory');
