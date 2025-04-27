@@ -1,6 +1,6 @@
 import os
 import openai
-from .config import OPENAI_API_KEY
+from config import OPENAI_API_KEY
 import traceback
 
 # Set OpenAI API key
