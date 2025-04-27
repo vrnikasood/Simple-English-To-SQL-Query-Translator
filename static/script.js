@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (response.ok) {
                 outputText.textContent = data.output;
                 applyCaseTransformation();
-                saveToHistory(data.input, data.output, data.mode);
+                saveToHistory(input, data.output, data.mode);
                 
                 // Apply syntax highlighting for SQL
                 if (mode === 'nl_to_sql' && hljs) {
