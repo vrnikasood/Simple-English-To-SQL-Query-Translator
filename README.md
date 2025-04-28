@@ -40,6 +40,4 @@ A modern, responsive web application that translates between SQL queries and Nat
 
 ```
 
-## License
 
-MIT
